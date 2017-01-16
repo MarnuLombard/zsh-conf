@@ -43,3 +43,9 @@ case $OSTYPE in
     ;;   
 esac
 
+
+# Uppercase first letter
+# see http://stackoverflow.com/questions/12487424/uppercase-first-character-in-a-variable-with-bash
+function ucfirst() {
+	echo "$(tr '[:lower:]' '[:upper:]' <<< ${1:0:1})${1:1}" 
+}
