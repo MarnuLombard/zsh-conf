@@ -39,14 +39,13 @@ export BULLETTRAIN_TIME_BG=white #                         ''              Backg
 # BULLETTRAIN_CUSTOM_FG                       black           Foreground color
 
 # Context
-# BULLETTRAIN_CONTEXT_SHOW                    false           Show/hide that segment
+export BULLETTRAIN_CONTEXT_SHOW=false           #Show/hide that segment
 export BULLETTRAIN_CONTEXT_BG=red           #Background color
 export BULLETTRAIN_CONTEXT_FG=black                      #default         Foreground color
 # BULLETTRAIN_CONTEXT_DEFAULT_USER            none            Default user. If you are running with other user
 #                                                             other than default, the segment will be showed.
 # BULLETTRAIN_CONTEXT_HOSTNAME                %m              Hostname. Set %M to display the full qualified domain name.
 # BULLETTRAIN_IS_SSH_CLIENT                   none            If true, the segment will be showed.
-export BULLETTRAIN_CONTEXT_SHOW=true
 
 # Python virtualenv (+Pyenv)
 # BULLETTRAIN_VIRTUALENV_SHOW                 true            Show/hide that segment
@@ -87,7 +86,7 @@ export BULLETTRAIN_RUBY_SHOW=false
 # BULLETTRAIN_DIR_CONTEXT_SHOW                false            Show user and machine in an SCP formatted style
 # BULLETTRAIN_DIR_EXTENDED                    1                Extended path (0=short path,
 #                                                              1=medium path, 2=complete path, everything else=medium path)
-export BULLETTRAIN_DIR_EXTENDED=2
+export BULLETTRAIN_DIR_EXTENDED=1
 
 # Git
 # BULLETTRAIN_GIT_SHOW                        true             Show/hide that segment
@@ -117,7 +116,7 @@ export BULLETTRAIN_DIR_EXTENDED=2
 # BULLETTRAIN_HG_SHOW                         true              Show/hide that segment
 
 # Command execution time
-# BULLETTRAIN_EXEC_TIME_SHOW                  false             Show/hide that segment
-# BULLETTRAIN_EXEC_TIME_ELAPSED               5                 Elapsed time of command execution
-# BULLETTRAIN_EXEC_TIME_BG                    yellow            Background color
-# BULLETTRAIN_EXEC_TIME_FG                    black             Foreground color
+export BULLETTRAIN_EXEC_TIME_SHOW=true             #Show/hide that segment
+export BULLETTRAIN_EXEC_TIME_ELAPSED=5                 #Elapsed time of command execution
+export BULLETTRAIN_EXEC_TIME_BG=yellow            #Background color
+export BULLETTRAIN_EXEC_TIME_FG=black             #Foreground color
