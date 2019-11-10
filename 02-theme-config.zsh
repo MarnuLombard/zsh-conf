@@ -3,18 +3,21 @@
 #################################################
 
 # BULLETTRAIN_PROMPT_ORDER defines order of prompt segments. Use zsh array syntax to specify your own order
-# BULLETTRAIN_PROMPT_ORDER=(
-#   git
-#   context
-#   dir
-#   time
-# )
+export BULLETTRAIN_PROMPT_ORDER=(
+  time
+  context
+  cmd_exec_time
+  status
+  dir
+  git
+)
+
 
 
 # VARIABLE                                  DEFAULT           MEANING
 
 # Prompt
-export BULLETTRAIN_PROMPT_CHAR="\xE2\x98\xA0"              #Character to be show before any command
+# BULLETTRAIN_PROMPT_CHAR                    \$               Character to be show before any command
 # BULLETTRAIN_PROMPT_ROOT                    true             Highlight if running as root
 # BULLETTRAIN_PROMPT_SEPARATE_LINE           true             Make the prompt span across two lines
 # BULLETTRAIN_PROMPT_ADD_NEWLINE             true             Adds a newline character before each prompt line
@@ -22,15 +25,15 @@ export BULLETTRAIN_PROMPT_CHAR="\xE2\x98\xA0"              #Character to be show
 
 # Status
 # BULLETTRAIN_STATUS_SHOW                     true            Show/hide that segment
-# BULLETTRAIN_STATUS_EXIT_SHOW                false           Show/hide exit code of last command
-export BULLETTRAIN_STATUS_BG=green           #Background color
+export BULLETTRAIN_STATUS_EXIT_SHOW=false #           Show/hide exit code of last command
+# BULLETTRAIN_STATUS_BG                       green           Background color
 # BULLETTRAIN_STATUS_ERROR_BG                 red             Background color of segment when last command exited with an error
 # BULLETTRAIN_STATUS_FG                       black           Foreground color
 
 # Time
 # BULLETTRAIN_TIME_SHOW                       true            Show/hide that segment
 # BULLETTRAIN_TIME_12HR                       false           Format time using 12-hour clock (am/pm)
-export BULLETTRAIN_TIME_BG=white #                         ''              Background color
+# BULLETTRAIN_TIME_BG                         ''              Background color
 # BULLETTRAIN_TIME_FG                         ''              Foreground color
 
 # Custom
@@ -39,13 +42,14 @@ export BULLETTRAIN_TIME_BG=white #                         ''              Backg
 # BULLETTRAIN_CUSTOM_FG                       black           Foreground color
 
 # Context
-export BULLETTRAIN_CONTEXT_SHOW=false           #Show/hide that segment
-export BULLETTRAIN_CONTEXT_BG=red           #Background color
-export BULLETTRAIN_CONTEXT_FG=black                      #default         Foreground color
+# BULLETTRAIN_CONTEXT_SHOW                    false           Show/hide that segment
+# BULLETTRAIN_CONTEXT_BG                      black           Background color
+# BULLETTRAIN_CONTEXT_FG                      default         Foreground color
 # BULLETTRAIN_CONTEXT_DEFAULT_USER            none            Default user. If you are running with other user
 #                                                             other than default, the segment will be showed.
 # BULLETTRAIN_CONTEXT_HOSTNAME                %m              Hostname. Set %M to display the full qualified domain name.
-# BULLETTRAIN_IS_SSH_CLIENT                   none            If true, the segment will be showed.
+export BULLETTRAIN_IS_SSH_CLIENT=true            #If true, the segment will be showed.
+export BULLETTRAIN_CONTEXT_SHOW=false
 
 # Python virtualenv (+Pyenv)
 # BULLETTRAIN_VIRTUALENV_SHOW                 true            Show/hide that segment
@@ -55,7 +59,7 @@ export BULLETTRAIN_CONTEXT_FG=black                      #default         Foregr
 export BULLETTRAIN_VIRTUALENV_SHOW=false
 
 # node.js nvm
-# BULLETTRAIN_NVM_SHOW                        false            Show/hide that segment
+export BULLETTRAIN_NVM_SHOW=false #            Show/hide that segment
 # BULLETTRAIN_NVM_BG                          green            Background color
 # BULLETTRAIN_NVM_FG                          white            Foreground color
 # BULLETTRAIN_NVM_PREFIX                      "⬡ "            Prefix of the segment
@@ -116,7 +120,7 @@ export BULLETTRAIN_DIR_EXTENDED=1
 # BULLETTRAIN_HG_SHOW                         true              Show/hide that segment
 
 # Command execution time
-export BULLETTRAIN_EXEC_TIME_SHOW=true             #Show/hide that segment
-export BULLETTRAIN_EXEC_TIME_ELAPSED=5                 #Elapsed time of command execution
-export BULLETTRAIN_EXEC_TIME_BG=yellow            #Background color
-export BULLETTRAIN_EXEC_TIME_FG=black             #Foreground color
+export BULLETTRAIN_EXEC_TIME_SHOW=true #             Show/hide that segment
+# BULLETTRAIN_EXEC_TIME_ELAPSED               5                 Elapsed time of command execution
+# BULLETTRAIN_EXEC_TIME_BG                    yellow            Background color
+# BULLETTRAIN_EXEC_TIME_FG                    black             Foreground color
