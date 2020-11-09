@@ -1,3 +1,5 @@
+# Because sellcheck doesn't support zsh, but is still useful:
+# shellcheck shell=bash
 ##############################################
 ## INIT OF THE OH-MY-ZSH FRAMEWORK
 ##############################################
