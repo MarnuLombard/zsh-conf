@@ -49,10 +49,6 @@ alias artisan='php artisan'
 # Composer 
 alias cda='composer dumpautoload'
 
-# Fkill - Fabulously kill processes
-# https://github.com/sindresorhus/fkill-cli
-alias kill='fkill'
-
 # Reset && clear scroll buffer to be the default behaviour
 alias reset='clear && printf "\e[3J"'
 
