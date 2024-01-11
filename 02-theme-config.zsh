@@ -1,5 +1,8 @@
 # Because sellcheck doesn't support zsh, but is still useful:
 # shellcheck shell=bash
+
+eval "$(starship init zsh)"
+
 #################################################
 ### CONFIG VALUES FOR THE CURRENTLY ACTIVE THEME
 #################################################
@@ -14,8 +17,6 @@ export BULLETTRAIN_PROMPT_ORDER=(
   git
 )
 
-
-
 # VARIABLE                                  DEFAULT           MEANING
 
 # Prompt
@@ -23,7 +24,6 @@ export BULLETTRAIN_PROMPT_ORDER=(
 # BULLETTRAIN_PROMPT_ROOT                    true             Highlight if running as root
 # BULLETTRAIN_PROMPT_SEPARATE_LINE           true             Make the prompt span across two lines
 # BULLETTRAIN_PROMPT_ADD_NEWLINE             true             Adds a newline character before each prompt line
-
 
 # Status
 # BULLETTRAIN_STATUS_SHOW                     true            Show/hide that segment
@@ -50,7 +50,7 @@ export BULLETTRAIN_STATUS_EXIT_SHOW=false #           Show/hide exit code of las
 # BULLETTRAIN_CONTEXT_DEFAULT_USER            none            Default user. If you are running with other user
 #                                                             other than default, the segment will be showed.
 # BULLETTRAIN_CONTEXT_HOSTNAME                %m              Hostname. Set %M to display the full qualified domain name.
-export BULLETTRAIN_IS_SSH_CLIENT=true            #If true, the segment will be showed.
+export BULLETTRAIN_IS_SSH_CLIENT=true #If true, the segment will be showed.
 export BULLETTRAIN_CONTEXT_SHOW=false
 
 # Python virtualenv (+Pyenv)

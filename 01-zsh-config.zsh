@@ -1,5 +1,6 @@
 # Because sellcheck doesn't support zsh, but is still useful:
 # shellcheck shell=bash
+
 ##############################################
 ### CONFIG VALUES FOR ZSH BEHAVIOUR
 ###############################################
@@ -38,20 +39,17 @@ export COMPLETION_WAITING_DOTS="true"
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
-HISTSIZE=$(echo "$HISTSIZE * 3" | bc -l) #tripple the default history size
-SAVEHIST=$(echo "$SAVEHIST * 5" | bc -l) #5 times the default size
+HISTSIZE=150000 #tripple the default history size
+SAVEHIST=50000  #5 times the default size
 
-export HISTSIZE;
-export SAVEHIST;
+export HISTSIZE
+export SAVEHIST
 
-unsetopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+unsetopt EXTENDED_HISTORY # Write the history file in the ":start:elapsed;command" format.
 
-setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
-setopt SHARE_HISTORY             # Share history between all sessions.
-setopt HIST_EXPIRE_DUPS_FIRST    # Expire duplicate entries first when trimming history.
-setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
-setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
-setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+setopt INC_APPEND_HISTORY     # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY          # Share history between all sessions.
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicate entries first when trimming history.
+setopt HIST_IGNORE_DUPS       # Don't record an entry that was just recorded again.
+setopt HIST_IGNORE_ALL_DUPS   # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_SAVE_NO_DUPS      # Don't write duplicate entries in the history file.

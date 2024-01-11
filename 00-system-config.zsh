@@ -1,5 +1,6 @@
 # Because sellcheck doesn't support zsh, but is still useful:
 # shellcheck shell=bash
+
 ##############################################
 ### CONFIG VALUES FOR SYSTEM VALUES
 ###############################################
@@ -17,19 +18,46 @@ export TERM=xterm-256color
 export NMAPDIR=~/.config/nmap
 
 # Default text editor for cli
-export EDITOR=nvim 
+export EDITOR=nvim
 
-# Not the greatest
-# @TODO: clean up/simplify/better
-export OSTYPE;
-if [[ "$(uname)" == "Darwin" ]]; then
-	OSTYPE="Darwin";
-elif [[ "${$(uname -s):0:5}" == "Linux" ]]; then
-	OSTYPE="Linux";
+OSTYPE="Darwin"
+export OSTYPE
+
+# Homebrew on M1 Macs
+if [[ -d /opt/homebrew/ ]]; then
+    BREWBASE="/opt/homebrew"
+else
+    BREWBASE="/usr/local"
 fi
 
+export TZ="Africa/Johannesburg"
 
-# Load iTerm3 config if it exists
-if [[ "$OSTYPE" == "Darwin" && -f /Users/marnu/.config/iterm2_shell_integration.zsh ]]; then
-  source /Users/marnu/.config/iterm2_shell_integration.zsh;
+# Load iTerm config if it exists
+if [[ "$OSTYPE" == "Darwin" && -f "${HOME}/.iterm2_shell_integration.zsh" ]]; then
+    # shellcheck source=/Users/marnu/.iterm2_shell_integration.zsh
+    source "${HOME}/.iterm2_shell_integration.zsh"
 fi
+
+# Colours in `man`
+# See https://drasite.com/blog/Pimp%20my%20terminal
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+# Use a higher ulimit
+# Default of 256 is too low for mariadb
+# See https://gist.github.com/devinrhode2/4cbf7f02a9701510d61f5be0515b8286
+# ulimit -n 200000 <-- can only be run as root
+ulimit -u 2048
+
+# Load colour functions into the env
+source "/usr/local/bin/header/.bash_colors"
+
+# May be respected, but often not.
+# See https://consoledonottrack.com
+export DO_NOT_TRACK=1
+export HOMEBREW_NO_ANALYTICS=1

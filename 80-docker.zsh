@@ -1,5 +1,6 @@
 # Because sellcheck doesn't support zsh, but is still useful:
 # shellcheck shell=bash
+
 ##############################################
 ### CONFIG VALUES AND BOOTSTRAP FOR DOCKER
 ###############################################
